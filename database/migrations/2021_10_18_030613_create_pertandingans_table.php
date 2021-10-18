@@ -18,11 +18,13 @@ class CreatePertandingansTable extends Migration
             $table->integer('club_id_1');
             $table->integer('club_id_2');
             $table->integer('stadion_id');
+            $table->string('stream')->nullable();
+            $table->string('kota')->nullable();
             $table->date('tanggal');
             $table->time('jam');
-            $table->integer('score_club_1');
-            $table->integer('score_club_2');
-            $table->integer('pemain_id_mot');
+            $table->integer('score_club_1')->nullable();
+            $table->integer('score_club_2')->nullable();
+            $table->integer('pemain_id_mot')->nullable();
             $table->integer('status')->default(1)->comment('0 Nonaktif | 1 Aktif');
             $table->timestamps();
         });

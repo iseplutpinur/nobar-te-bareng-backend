@@ -19,7 +19,7 @@ class CreateMembersTable extends Migration
             $table->string('email');
             $table->text('password');
             $table->string('whatsapp_no');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->integer('status')->default(1)->comment('0 Nonaktif | 1 Aktif');
             $table->timestamps();
         });
