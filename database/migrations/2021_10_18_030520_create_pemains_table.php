@@ -15,6 +15,11 @@ class CreatePemainsTable extends Migration
     {
         Schema::create('pemains', function (Blueprint $table) {
             $table->id();
+            $table->integer('club_id');
+            $table->string('posisi_id')->nullable();
+            $table->string('name');
+            $table->string('photo')->nullable();
+            $table->integer('status')->default(1)->comment('0 Nonaktif | 1 Aktif');
             $table->timestamps();
         });
     }

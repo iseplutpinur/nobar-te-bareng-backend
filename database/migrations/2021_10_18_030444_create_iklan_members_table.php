@@ -15,6 +15,10 @@ class CreateIklanMembersTable extends Migration
     {
         Schema::create('iklan_members', function (Blueprint $table) {
             $table->id();
+            $table->integer('pertandingan_id')->nullable();
+            $table->integer('iklan_id')->nullable();
+            $table->integer('member_id')->nullable();
+            $table->integer('status')->default(1)->comment('0 Nonaktif | 1 Aktif');
             $table->timestamps();
         });
     }

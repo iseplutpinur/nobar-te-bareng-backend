@@ -15,6 +15,11 @@ class CreateTebakMotsTable extends Migration
     {
         Schema::create('tebak_mots', function (Blueprint $table) {
             $table->id();
+            $table->integer('pertandingan_id');
+            $table->integer('member_id');
+            $table->integer('pemain_id');
+            $table->integer('menang')->nullable();
+            $table->integer('status')->default(1)->comment('0 Nonaktif | 1 Aktif');
             $table->timestamps();
         });
     }

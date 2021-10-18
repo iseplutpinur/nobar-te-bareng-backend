@@ -15,6 +15,12 @@ class CreateTebakSkorsTable extends Migration
     {
         Schema::create('tebak_skors', function (Blueprint $table) {
             $table->id();
+            $table->integer('pertandingan_id');
+            $table->integer('member_id');
+            $table->integer('score_club_1');
+            $table->integer('score_club_2');
+            $table->integer('menang')->nullable();
+            $table->integer('status')->default(1)->comment('0 Nonaktif | 1 Aktif');
             $table->timestamps();
         });
     }

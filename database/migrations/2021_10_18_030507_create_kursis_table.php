@@ -15,6 +15,12 @@ class CreateKursisTable extends Migration
     {
         Schema::create('kursis', function (Blueprint $table) {
             $table->id();
+            $table->integer('pertandingan_id');
+            $table->integer('member_id');
+            $table->integer('kursi_kategori_id');
+            $table->integer('kursi_number');
+            $table->integer('status')->default(1)->comment('0 Nonaktif | 1 Aktif');
+            $table->integer('menang')->nullable();
             $table->timestamps();
         });
     }

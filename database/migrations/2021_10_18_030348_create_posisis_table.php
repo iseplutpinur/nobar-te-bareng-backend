@@ -15,6 +15,9 @@ class CreatePosisisTable extends Migration
     {
         Schema::create('posisis', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->integer('status')->default(1)->comment('0 Nonaktif | 1 Aktif');
             $table->timestamps();
         });
     }

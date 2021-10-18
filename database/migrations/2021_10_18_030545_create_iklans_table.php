@@ -15,6 +15,12 @@ class CreateIklansTable extends Migration
     {
         Schema::create('iklans', function (Blueprint $table) {
             $table->id();
+            $table->integer('pertandingan_id');
+            $table->string('kategori');
+            $table->string('nama');
+            $table->string('gambar');
+            $table->string('youtube');
+            $table->integer('status')->default(1)->comment('0 Nonaktif | 1 Aktif');
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateKursiKategorisTable extends Migration
     {
         Schema::create('kursi_kategoris', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('start_number');
+            $table->integer('end_number');
+            $table->integer('status')->default(1)->comment('0 Nonaktif | 1 Aktif');
             $table->timestamps();
         });
     }
